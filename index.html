@@ -13,7 +13,10 @@
 <!--<test-element></test-element>-->
 <script>
     let el = document.createElement("test-element")
-    let el1 = document.createElement("custom-anchor")
+    let el1 = document.createElement("a")
+    el1.setAttribute("is", "custom-anchor")
+    el1.setAttribute("href", "http://www.google.com/")
+    el1.text = "Go to Google"
     setTimeout(() => {
         document.body.appendChild(el)
         document.body.appendChild(el1)

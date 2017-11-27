@@ -1,18 +1,23 @@
 
-import io.gbaldeck.kwc.CustomElement
+
+import io.gbaldeck.kwc.Static
 import io.gbaldeck.kwc.confirm
 import org.w3c.dom.HTMLAnchorElement
+import org.w3c.dom.HTMLElement
 
-class CustomAnchor: CustomElement<HTMLAnchorElement>(){
+abstract class CustomAnchor: HTMLAnchorElement(){
 
   companion object: Static<CustomAnchor>()
 
-  override fun connectedCallback() {
+  @JsName("connectedCallback")
+  fun connectedCallback() {
+    console.log("anchor added to dom")
     this.asDynamic().addEventListener("click", {
       e: dynamic ->
+      console.log("test")
       e.preventDefault();
       val result = confirm("Confirmed!")
-    } as Function<Unit>)
+    } as (dynamic) -> Unit)
     console.log("no problemo")
   }
 }
