@@ -1,8 +1,8 @@
 package io.gbaldeck.kwc
 
-import org.w3c.dom.Element
-
-abstract class Static<K: Element>
+open class Static<K: ElementReference>{
+  open val observedAttributes: Array<String>? = null
+}
 
 
 //var CustomElement.observedAttributes: Array<String>?

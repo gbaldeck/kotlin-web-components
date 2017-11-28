@@ -1,26 +1,23 @@
+import io.gbaldeck.kwc.HTMLElement
 import io.gbaldeck.kwc.Static
-import org.w3c.dom.HTMLElement
 
 abstract class MyElement: HTMLElement() {
 
   companion object: Static<MyElement>() {
-    val observedAttributes: Array<String>?
+    override val observedAttributes: Array<String>?
       get() = arrayOf("demo")
   }
 
 
-  @JsName("connectedCallback")
-  fun connectedCallback() {
+  override fun connectedCallback() {
     console.log("My custom element was added to the dom!")
   }
 
-  @JsName("attributeChangedCallback")
-  fun attributeChangedCallback(name: String, oldValue: dynamic, newValue: dynamic) {
+  override fun attributeChangedCallback(name: String, oldValue: dynamic, newValue: dynamic) {
     console.log("Attribute changed!", name, oldValue, newValue)
   }
 
-  @JsName("disconnectedCallback")
-  fun disconnectedCallback() {
+  override fun disconnectedCallback() {
     console.log("my element was removed from the dom!")
   }
 }

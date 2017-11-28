@@ -6,10 +6,10 @@ var kwc = function (_, Kotlin) {
   var $$importsForInline$$ = _.$$importsForInline$$ || (_.$$importsForInline$$ = {});
   var Kind_OBJECT = Kotlin.Kind.OBJECT;
   var Unit = Kotlin.kotlin.Unit;
-  var throwCCE = Kotlin.throwCCE;
   var Kind_CLASS = Kotlin.Kind.CLASS;
   var defineInlineFunction = Kotlin.defineInlineFunction;
   var wrapFunction = Kotlin.wrapFunction;
+  var throwCCE = Kotlin.throwCCE;
   CustomAnchor$Companion.prototype = Object.create(Static.prototype);
   CustomAnchor$Companion.prototype.constructor = CustomAnchor$Companion;
   CustomAnchor.prototype = Object.create(HTMLAnchorElement.prototype);
@@ -29,7 +29,7 @@ var kwc = function (_, Kotlin) {
   CustomAnchor$Companion.$metadata$ = {
     kind: Kind_OBJECT,
     simpleName: 'Companion',
-    interfaces: [Static]
+    interfaces: []
   };
   var CustomAnchor$Companion_instance = null;
   function CustomAnchor$Companion_getInstance() {
@@ -45,9 +45,8 @@ var kwc = function (_, Kotlin) {
     return Unit;
   }
   CustomAnchor.prototype.connectedCallback = function () {
-    var tmp$;
-    console.log('anchor added to dom');
-    this.addEventListener('click', typeof (tmp$ = CustomAnchor$connectedCallback$lambda) === 'function' ? tmp$ : throwCCE());
+    console.log('anchor added to dom 12');
+    this.addEventListener('click', CustomAnchor$connectedCallback$lambda);
     console.log('no problemo');
   };
   CustomAnchor.$metadata$ = {
@@ -71,7 +70,7 @@ var kwc = function (_, Kotlin) {
   MyElement$Companion.$metadata$ = {
     kind: Kind_OBJECT,
     simpleName: 'Companion',
-    interfaces: [Static]
+    interfaces: []
   };
   var MyElement$Companion_instance = null;
   function MyElement$Companion_getInstance() {
@@ -109,14 +108,7 @@ var kwc = function (_, Kotlin) {
     var element_0 = CustomAnchor$Companion_getInstance();
     __finalizeElement(elementName_0, get_js(getKClass(CustomAnchor)), element_0, anchorOptions);
   }
-  function Static() {
-  }
-  Static.$metadata$ = {
-    kind: Kind_CLASS,
-    simpleName: 'Static',
-    interfaces: []
-  };
-  var defineElement = defineInlineFunction('kwc.io.gbaldeck.kwc.defineElement_hm8yfq$', wrapFunction(function () {
+  var defineElement = defineInlineFunction('kwc.io.gbaldeck.kwc.defineElement_n5713a$', wrapFunction(function () {
     var getKClass = Kotlin.getKClass;
     var get_js = Kotlin.kotlin.js.get_js_1yb8b7$;
     var __finalizeElement = _.io.gbaldeck.kwc.__finalizeElement_cazn0n$;
@@ -154,7 +146,6 @@ var kwc = function (_, Kotlin) {
   var package$io = _.io || (_.io = {});
   var package$gbaldeck = package$io.gbaldeck || (package$io.gbaldeck = {});
   var package$kwc = package$gbaldeck.kwc || (package$gbaldeck.kwc = {});
-  package$kwc.Static = Static;
   package$kwc.__finalizeElement_cazn0n$ = __finalizeElement;
   package$kwc.jsObject = jsObject;
   main([]);

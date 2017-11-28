@@ -1,8 +1,6 @@
 package io.gbaldeck.kwc
 
-import org.w3c.dom.Element
-
-inline fun <reified T: Element> defineElement(elementName: String, element: Static<T>, options:dynamic = undefined){
+inline fun <reified T: ElementReference> defineElement(elementName: String, element: Static<T>, options:dynamic = undefined){
   __finalizeElement(elementName, T::class.js, element, options)
 }
 
