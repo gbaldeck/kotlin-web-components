@@ -7,16 +7,39 @@
     <script src="lib/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="web/kotlin.js"></script>
     <script src="build/js/kwc.js"></script>
+    <!--<script>-->
+    <!--This is a nonworking extended element, Chrome has not implemented extending elements-->
+    <!--other than HTMLElement yet-->
+        <!--class PlasticButton extends HTMLButtonElement {-->
+            <!--constructor() {-->
+                <!--super();-->
+
+            <!--}-->
+
+            <!--connectedCallback() {-->
+                <!--console.log('PlasticButton added to dom');-->
+
+                <!--this.addEventListener('click',-->
+                    <!--function (e) {-->
+                        <!--console.log('test');-->
+                        <!--e.preventDefault();-->
+                        <!--var result = confirm('Confirmed!');-->
+                    <!--}-->
+                <!--);-->
+            <!--}-->
+        <!--}-->
+        <!--window.customElements.define("plastic-button", PlasticButton, { extends: "button" });-->
+    <!--</script>-->
 </head>
 <body>
 <!--<custom-anchor></custom-anchor>-->
 <!--<test-element></test-element>-->
 <script>
     let el = document.createElement("test-element")
-    let el1 = document.createElement("a")
-    el1.setAttribute("is", "custom-anchor")
-    el1.setAttribute("href", "http://www.google.com/")
-    el1.text = "Go to Google"
+//    let el1 = document.createElement("button", { is: "plastic-button" })
+//    let el1 = new PlasticButton()
+//    el1.setAttribute("href", "http://www.google.com/")
+//    el1.text = "Go to Google"
     setTimeout(() => {
         document.body.appendChild(el)
         document.body.appendChild(el1)

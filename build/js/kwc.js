@@ -29,7 +29,7 @@ var kwc = function (_, Kotlin) {
   CustomAnchor$Companion.$metadata$ = {
     kind: Kind_OBJECT,
     simpleName: 'Companion',
-    interfaces: []
+    interfaces: [Static]
   };
   var CustomAnchor$Companion_instance = null;
   function CustomAnchor$Companion_getInstance() {
@@ -70,7 +70,7 @@ var kwc = function (_, Kotlin) {
   MyElement$Companion.$metadata$ = {
     kind: Kind_OBJECT,
     simpleName: 'Companion',
-    interfaces: []
+    interfaces: [Static]
   };
   var MyElement$Companion_instance = null;
   function MyElement$Companion_getInstance() {
@@ -108,6 +108,19 @@ var kwc = function (_, Kotlin) {
     var element_0 = CustomAnchor$Companion_getInstance();
     __finalizeElement(elementName_0, get_js(getKClass(CustomAnchor)), element_0, anchorOptions);
   }
+  function Static() {
+    this.observedAttributes_ld06sp$_0 = null;
+  }
+  Object.defineProperty(Static.prototype, 'observedAttributes', {
+    get: function () {
+      return this.observedAttributes_ld06sp$_0;
+    }
+  });
+  Static.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'Static',
+    interfaces: []
+  };
   var defineElement = defineInlineFunction('kwc.io.gbaldeck.kwc.defineElement_n5713a$', wrapFunction(function () {
     var getKClass = Kotlin.getKClass;
     var get_js = Kotlin.kotlin.js.get_js_1yb8b7$;
@@ -146,6 +159,7 @@ var kwc = function (_, Kotlin) {
   var package$io = _.io || (_.io = {});
   var package$gbaldeck = package$io.gbaldeck || (package$io.gbaldeck = {});
   var package$kwc = package$gbaldeck.kwc || (package$gbaldeck.kwc = {});
+  package$kwc.Static = Static;
   package$kwc.__finalizeElement_cazn0n$ = __finalizeElement;
   package$kwc.jsObject = jsObject;
   main([]);
