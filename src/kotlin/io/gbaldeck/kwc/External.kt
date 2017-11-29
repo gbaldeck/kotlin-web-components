@@ -4,8 +4,15 @@ external val window: dynamic
 
 external fun confirm(message: String)
 
+external interface ShadowRoot{
+  var innerHTML: String
+}
+
 external open class ElementReference {
   fun addEventListener(eventName: String, callback: Function<Unit>)
+
+  fun attachShadow(config: dynamic)
+  val shadowRoot: ShadowRoot?
 
   @JsName("connectedCallback")
   open fun connectedCallback()
